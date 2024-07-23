@@ -1,0 +1,23 @@
+<main>
+  <h1>Dashboard</h1>
+  <button id="new-post">New Post</button>
+  {{#each posts}}
+    <article>
+      <h2><a href="/dashboard/edit/{{id}}">{{title}}</a></h2>
+      <p>{{content}}</p>
+    </article>
+  {{/each}}
+   <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-button">&times;</span>
+      <h2>New Post</h2>
+      <form id="new-post-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <label for="content">Content</label>
+        <textarea id="content" name="content" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,24 @@
+<main>
+  <article>
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+    <p>By {{user.username}} on {{createdAt}}</p>
+  </article>
+  <section>
+    <h2>Comments</h2>
+    {{#each comments}}
+      <div>
+        <p>{{comment_text}}</p>
+        <p>By {{user.username}} on {{createdAt}}</p>
+      </div>
+    {{else}}
+      <p>No comments yet.</p>
+    {{/each}}
+    {{#if logged_in}}
+      <textarea id="comment-text"></textarea>
+      <button id="submit-comment">Submit Comment</button>
+    {{else}}
+      <p>You need to <a href="/login">log in</a> to comment.</p>
+    {{/if}}
+  </section>
+</main>
